@@ -142,36 +142,77 @@ Qbar=(~Qbar&k)|(Qbar&~j);
 end
 endmodule
 ```
+## D flipflop:
+```
+module dflipflop(d,clk,q,qbar); 
+input d,clk; 
+output reg q; 
+output reg qbar; 
+initial q=0;
+initial qbar=1; 
+always @(posedge clk) 
+begin 
+q=d; 
+qbar=~q; 
+end 
+endmodule
+```
+## T flipflop:
+```
+module t(T,clk,q,qbar);
+input T,clk;
+output reg q;
+output reg qbar;
+initial q=0;
+initial qbar=1;
+always @ (posedge clk)
+begin
+q=(T&(~q))|((~T)&q);
+qbar=(~q);
+end
+endmodule
+```
+
 ## RTL LOGIC FOR SR FLIPFLOPS
 
-![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/dcf85ec8-e969-49d9-9a74-030a039d0c0e)
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/840deaab-2144-44e2-9f96-d9828b0eb33c)
+
 
 
 ## RTL LOGIC FOR JK FLIPFLOPS
 
-![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/47e23580-2148-482a-b502-2752965f5d8c)
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/e68e8108-3b3e-4a1a-b60e-16b31a463082)
 
 
-## Waveform Output For SR:
+## RTL LOGIC FOR D FLIPFLOPS
 
-![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/bb6ef0a7-dfac-4146-b62f-4059a3b9a781)
-
-
-
-## Waveform Output For JK:
-
-![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/028e5853-05df-40eb-a802-cc6988b247b6)
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/b86c698c-d48b-4d64-affd-982452484db4)
 
 
+## RTL LOGIC FOR T FLIPFLOPS
 
-## Truth table For SR:
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/ad70c1ca-23c0-4e83-a8f9-8c18497cf492)
 
-![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/7df83287-70b2-4139-b692-2f0519ff1844)
+## TIMING DIGRAMS FOR FLIP FLOPS:
+
+# SR FLIPFLOPS FOR TIMING DIGRAMS: 
+
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/87a0c8b8-8653-415f-b1ff-4656f40e73f2)
 
 
-## Truth table For JK:
+# JK FLIPFLOPS FOR TIMING DIGRAMS: 
 
-![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/299488f2-d1aa-4ae8-a69b-95a788114278)
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/32583925-267e-4525-a12f-13695be804a5)
+
+
+# D FLIPFLOPS FOR TIMING DIGRAMS: 
+
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/64ce6a73-be47-4128-b10e-7bd5742779c8)
+
+
+# T FLIPFLOPS FOR TIMING DIGRAMS: 
+
+![image](https://github.com/lovelydevil36/Experiment--05-Implementation-of-flipflops-using-verilog/assets/123564624/ece72a0d-7ba6-4983-ab2f-cdfcc5edc651)
 
 
 ## RESULTS:-
